@@ -1,0 +1,85 @@
+<style>
+    .formTitle {
+        text-align: center;
+        font-size: xx-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+</style>
+
+
+
+<div class="card">
+    <form [formGroup]="userForm">
+        <div class="mt-5 box">
+            <div class="form-row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>First Name: </label>
+                    </div>
+                    <div class="form-row" style="margin: top -10px;">
+                        <div class="col">
+                            <input type="text" formControlName="fname" class="form-control"
+                                placeholder="Enter first name..">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group mt-4">
+                        <label>Last Name: </label>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" formControlName="lname" class="form-control"
+                                placeholder="Enter last name..">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Phone Number: </label>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" formControlName="phone" class="form-control"
+                                placeholder="Enter phone number">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row mt-4">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary" (click)="addItem()">
+                            Add
+                        </button>&nbsp;
+                        <button class="btn btn-primary" (click)="reset()">
+                            Reset
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="col-md-8 mt-4 mb-4">
+        <table class="table table-bordered">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listdata">
+                    <td><span [contentEditable]="contentEditable">{{item.fname}}</span></td>
+                    <td><span [contentEditable]="contentEditable">{{item.lname}}</span></td>
+                    <td><span [contentEditable]="contentEditable">{{item.phone}}</span></td>
+                    <td><button type="button" class="btn btn-primary" (click)="removeItem(item)">Remove</button></td>
+                    <td><button type="button" class="btn btn-primary" (click)="selectDiv()">{{edit? "Done":
+                            "Edit"}}</button></td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

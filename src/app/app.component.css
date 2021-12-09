@@ -6,3 +6,7 @@
     padding: 0px 20px 20px 20px;
     margin-left: 400px;
 }
+.navbar
+{
+    justify-content: space-between;
+}

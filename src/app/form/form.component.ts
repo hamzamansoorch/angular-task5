@@ -16,6 +16,7 @@ export class FormComponent implements OnInit, OnDestroy {
   edit = false;
   selectedItem: any;
 
+  //route: any;
 
   constructor(private fb: FormBuilder, private router: Router, private shared: SharedService) {
 

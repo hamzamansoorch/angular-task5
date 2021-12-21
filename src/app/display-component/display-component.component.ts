@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared/shared.service';
 import { FormComponent } from '../form/form.component';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-display-component',
@@ -8,8 +9,9 @@ import { FormComponent } from '../form/form.component';
   styleUrls: ['./display-component.component.css']
 })
 export class DisplayComponentComponent implements OnInit {
-  itemList: any
-  messageFromForm: any
+  userForm!: FormGroup;
+  itemList: any;
+  messageFromForm: any;
   constructor(private shared: SharedService) { }
 
   ngOnInit() {

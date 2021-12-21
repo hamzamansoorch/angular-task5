@@ -1,7 +1,7 @@
 import { analyzeAndValidateNgModules, ThrowStmt } from '@angular/compiler';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../shared/shared.service';
 @Component({
   selector: 'app-form',
@@ -46,8 +46,6 @@ export class FormComponent implements OnInit, OnDestroy {
     this.edit = !this.edit;
     this.contentEditable = this.edit;
 
-
-
   }
   removeItem(element: any) {
     this.listdata.forEach((value: any, index: any) => {
@@ -61,12 +59,7 @@ export class FormComponent implements OnInit, OnDestroy {
 
     this.selectedItem = item;
     this.shared.communicate(this.selectedItem);
-    this.router.navigateByUrl('/display-component');
-
-
-
-
-
+    this.router.navigate(['/display-component']);
 
   }
 

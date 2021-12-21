@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
 
+  { path: '', redirectTo: '*', pathMatch: 'full' },
+
+
   {
     path: 'form', component: FormComponent
   },
@@ -20,4 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [FormComponent, DisplayComponentComponent]
+//export const routingComponents = [FormComponent, DisplayComponentComponent]
